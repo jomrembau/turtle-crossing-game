@@ -1,44 +1,15 @@
-Turtle Crossing Game 🐢🚗
-Description
+# Turtle Crossing Game 🐢🚗
 
-This is a Turtle Crossing game built with Python's turtle module. The player controls a turtle that moves upward across lanes of moving cars. The goal is to reach the top and increase the level.
+A fun **arcade-style game** built with Python's turtle module.  
 
-Status: Still in progress – currently supports:
+## 🎮 Gameplay
+- Control the turtle and cross the road without getting hit by cars.
+- Cars move at random speeds and spawn on different lanes.
+- Each time you reach the top, you level up and difficulty increases.
+- The score is displayed, and the game ends if a car hits the turtle.
 
-Player movement
-
-Single car movement
-
-Score tracking
-
-Game Over display
-
-Missing features:
-
-Multiple cars
-
-Full collision detection
-
-Dynamic car spawning
-
-How to Play
-
-Run the main Python script.
-
-Press the Up arrow key to move the turtle forward.
-
-Avoid cars and reach the top of the screen to increase your score.
-
-The game ends if you collide with a car (collision detection for multiple cars is not fully implemented).
-
-Files
-
-main.py – Game loop and initialization
-
-player.py – Player class
-
-cars.py – Car class (currently single car)
-
-score.py – Score tracking
-
-gameover.py – Game over display
+## 🛠️ Features
+- Smooth animations with turtle graphics.
+- Increasing difficulty for more challenge.
+- Score tracking system.
+- Game over screen.
