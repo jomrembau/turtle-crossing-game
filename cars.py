@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
 import random
 
 colors = [
@@ -16,19 +16,33 @@ colors = [
     "magenta"
 ]
 
-lanes = [-150, -100, -50, 0, 50, 100, 150 ]
+lanes = [-125, -50, 25, 100, 175]
 
 class Cars:
 
     def __init__(self):
-        self.auto = Turtle(visible=False)
-        self.auto.shape("square")
-        self.auto.color(random.choice(colors))
-        self.auto.shapesize(stretch_wid=1, stretch_len=3)
-        self.auto.penup()
-        self.random_movement = random.randint(5,15)
-        self.auto.goto(250,random.choice(lanes))
-        self.auto.showturtle()
+        self.car_list = []
+        self.screen = Screen()
 
     def move_cars(self):
-        self.auto.back(self.random_movement)
+        for car in self.car_list:
+            car["turtle"].back(car["speed"])
+            if car["turtle"].xcor() <= -260:
+                car["turtle"].hideturtle()
+                self.car_list.remove(car)
+
+    def generate_cars(self):
+        if len(self.car_list) <= 10:
+            x = Turtle(visible=False)
+            x.penup()
+            x.shape("square")
+            x.color(random.choice(colors))
+            x.shapesize(stretch_len=3, stretch_wid=1)
+            x.goto(250, random.choice(lanes))
+            x.showturtle()
+            self.car_list.append({"turtle": x, "speed": random.randint(5,20)})
+            self.screen.ontimer(self.generate_cars,2000)
+
+
+
+
